@@ -1,5 +1,5 @@
 #include<stdio.h>
-//²âÊÔ¸üĞÂ
+//test update
 int main()
 {
     int i,j;
