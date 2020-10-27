@@ -1,5 +1,5 @@
 #include<stdio.h>
-//test update
+//test updategogogo
 int main()
 {
     int i,j;
