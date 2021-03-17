@@ -1,13 +1,13 @@
 #include <iostream>
 using namespace std;
-// Ã°ÅİÅÅĞò°¢°¡°¡
+// å†’æ³¡æ’åºé˜¿å•Šå•Š
 int main() {
     int arr[3][3] = {
             {100,100,100},
             {90,50,100},
             {60,70,80}
     };
-    string arrname[3] = {"ÀîËÄ","ÕÅÈı","ÍõÎå"};
+    string arrname[3] = {"æå››","å¼ ä¸‰","ç‹äº”"};
     for (int i = 0; i < 3; ++i) {
         int sum = 0;
         for (int j = 0; j < 3; ++j) {
