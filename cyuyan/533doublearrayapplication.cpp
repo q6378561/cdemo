@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-// ц╟ещеепР
+// ц╟ещеепР1
 int main() {
     int arr[3][3] = {
             {100,100,100},
