@@ -1,28 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define InitSize 10
+#define InitSize 10   // 顺序表的初始长度
 #define MaxSize 10
 
 // 动态分配
 //typedef struct{
-//    int length;
-//    int MaxSize;
-//    int *data;
-//}SqList;
+//    int length;   // 顺序表的当前长度
+//    int MaxSize;  // 顺序表的最大容量
+//    int *data;     // 指示动态分配数组的指针
+//}SqList;          // 顺序表的类型定义(动态分配方式)
 //静态分配
 typedef struct{
     int data[MaxSize];
     int length;
-
 }SqList;
-void InitList(SqList &L){
+void InitList(SqList & L){
     L.length = 0;
-    for (int i = 0; i <MaxSize ; ++i) {
-        L.data[i] =i;
-        L.length ++;
-
-    }
+//    for (int i = 0; i <MaxSize ; ++i) {
+//        L.data[i] =i;
+//        L.length ++;
+//
+//    }
 }
 //void InitList(SqList &L){
 //    L.data = (int *)malloc(InitSize*sizeof(int));
@@ -56,7 +55,7 @@ int main ()
     InitList(L);
 //    printf("L.data当前为:%d\n",L.data);
 //    IncreaseSize(L,5);
-    ListInsert(L,3,3);
+//    ListInsert(L,3,3);
 
 
     return 0;

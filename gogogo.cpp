@@ -2,6 +2,6 @@
 //test 1111
 int main()
 {
-    printf("傻逼");
+    char p = 'a';
     return 0;
 }
