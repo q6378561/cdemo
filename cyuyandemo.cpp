@@ -15,7 +15,7 @@ typedef struct{
     int data[MaxSize];
     int length;
 }SqList;
-void InitList(SqList & L){
+void InitList(SqList & L){     // 可以简单理解为：如果e的值发生改变并需要此改变能返回到主函数则需要加&符号。
     L.length = 0;
 //    for (int i = 0; i <MaxSize ; ++i) {
 //        L.data[i] =i;
