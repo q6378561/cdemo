@@ -1,27 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define InitSize 10   // Ë³Ğò±íµÄ³õÊ¼³¤¶È
+#define InitSize 10   // é¡ºåºè¡¨çš„åˆå§‹é•¿åº¦
 #define MaxSize 10
 
-// ¶¯Ì¬·ÖÅä
+// åŠ¨æ€åˆ†é…
 //typedef struct{
-//    int length;   // Ë³Ğò±íµÄµ±Ç°³¤¶È
-//    int MaxSize;  // Ë³Ğò±íµÄ×î´óÈİÁ¿
-//    int *data;     // Ö¸Ê¾¶¯Ì¬·ÖÅäÊı×éµÄÖ¸Õë
-//}SqList;          // Ë³Ğò±íµÄÀàĞÍ¶¨Òå(¶¯Ì¬·ÖÅä·½Ê½)
-//¾²Ì¬·ÖÅä
+//    int length;   // é¡ºåºè¡¨çš„å½“å‰é•¿åº¦
+//    int MaxSize;  // é¡ºåºè¡¨çš„æœ€å¤§å®¹é‡
+//    int *data;     // æŒ‡ç¤ºåŠ¨æ€åˆ†é…æ•°ç»„çš„æŒ‡é’ˆ
+//}SqList;          // é¡ºåºè¡¨çš„ç±»å‹å®šä¹‰(åŠ¨æ€åˆ†é…æ–¹å¼)
+//é™æ€åˆ†é…
 typedef struct{
     int data[MaxSize];
     int length;
 }SqList;
-void InitList(SqList & L){     // ¿ÉÒÔ¼òµ¥Àí½âÎª£ºÈç¹ûeµÄÖµ·¢Éú¸Ä±ä²¢ĞèÒª´Ë¸Ä±äÄÜ·µ»Øµ½Ö÷º¯ÊıÔòĞèÒª¼Ó&·ûºÅ¡£
+void InitList(SqList & L){     // å¯ä»¥ç®€å•ç†è§£ä¸ºï¼šå¦‚æœeçš„å€¼å‘ç”Ÿæ”¹å˜å¹¶éœ€è¦æ­¤æ”¹å˜èƒ½è¿”å›åˆ°ä¸»å‡½æ•°åˆ™éœ€è¦åŠ &ç¬¦å·ã€‚
     L.length = 0;
-//    for (int i = 0; i <MaxSize ; ++i) {
-//        L.data[i] =i;
-//        L.length ++;
-//
-//    }
+    for (int i = 0; i <MaxSize ; ++i) {
+        L.data[i] =i;
+        L.length ++;
+
+    }
 }
 //void InitList(SqList &L){
 //    L.data = (int *)malloc(InitSize*sizeof(int));
@@ -53,7 +53,7 @@ int main ()
 //    test(p);
     SqList L;
     InitList(L);
-//    printf("L.dataµ±Ç°Îª:%d\n",L.data);
+    printf("L.dataå½“å‰ä¸º:%d\n",L.data);
 //    IncreaseSize(L,5);
 //    ListInsert(L,3,3);
 
