@@ -37,6 +37,8 @@ void InitList(SqList & L){     // 可以简单理解为：如果e的值发生改
 //    L.MaxSize = L.MaxSize +len;
 //    free(p);
 //}
+
+
 void ListInsert(SqList &L,int i,int e){
     for (int j = L.length; j > i ; j--) {
         L.data[j] = L.data[j-1];
