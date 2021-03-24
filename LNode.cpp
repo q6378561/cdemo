@@ -1,7 +1,7 @@
 //
 // Created by lzl on 2020/9/23.
 //
-// 线性表的代码
+// 线性表的代码 上传相应的规则文件
 #include "stdio.h"
 #include "stdlib.h"
 #include "io.h"
