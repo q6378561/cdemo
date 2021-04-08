@@ -23,6 +23,7 @@ void InitList(SqList & L){     // 可以简单理解为：如果e的值发生改
 
     }
 }
+// linear_list
 //void InitList(SqList &L){
 //    L.data = (int *)malloc(InitSize*sizeof(int));
 //    L.length = 0;
