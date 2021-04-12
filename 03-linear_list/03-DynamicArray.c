@@ -1,53 +1,60 @@
-//
-// Created by lzl on 2021/4/8.
-//
-
-
-
-#include<stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
-#define initsize 100
-
-typedef int ElemType;
-
-typedef struct {
-    ElemType *data;
-    int length,
-        MaxSize;
-}SqList;
-
-
-bool Insert(SqList *L, int i,ElemType e){
-    // L是顺序表 i是要插入的位置 e是要插入的元素
-//     下标i不能小于1
-//     下标i能大于要插入的表长度+1 +1是因为i可以当长度加1的length
-    if(i < 1 || i > L->length + 1){
-        return false;
+#define Size 4
+typedef struct Table{
+    int * head;
+    int length;
+    int size;
+}table;
+table initTable(){
+    table t;
+    t.head=(int*)malloc(Size*sizeof(int));
+    if (!t.head)
+    {
+        printf("初始化失败");
+        exit(0);
     }
-
-    if(L->length + 1 > L->MaxSize){
-        return false;
+    t.length=0;
+    t.size=Size;
+    return t;
+}
+table addTable(table t,int elem,int add)
+{
+    if (add>t.length+1||add<1) {
+        printf("插入位置有问题");
+        return t;
     }
-
-
+    if (t.length>=t.size) {
+        t.head=(int *)realloc(t.head, (t.size+1)*sizeof(int));
+        if (!t.head) {
+            printf("存储分配失败");
+        }
+        t.size+=1;
+    }
+    for (int i=t.length-1; i>=add-1; i--) {
+        t.head[i+1]=t.head[i];
+    }
+    t.head[add-1]=elem;
+    t.length++;
+    return t;
 }
-
-void InitList(SqList *L){
-    L->data = (int *)malloc(initsize*sizeof(int));
-    L->length = 0;
-    L->MaxSize = initsize;
+void displayTable(table t){
+    for (int i=0;i<t.length;i++) {
+        printf("%d",t.head[i]);
+    }
+    printf("\n");
 }
-int main() {
-    SqList L;
-    InitList(&L);
+int main(){
+    table t1=initTable();
+    for (int i=1; i<=Size; i++) {
+        t1.head[i-1]=i;
+        t1.length++;
+    }
+    printf("原顺序表：\n");
+    displayTable(t1);
 
-//    //声明指针变量后 应用箭头去访问
-////    pl->data;
-//    printf("#x\n",L.data);
-//    L.data = (ElemType *)malloc(initsize* sizeof(ElemType));
-//    printf("#x\n",L.data);
-
-
+    printf("在第2的位置插入元素5:\n");
+    t1=addTable(t1, 5, 2);
+    displayTable(t1);
     return 0;
 }
