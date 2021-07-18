@@ -42,6 +42,7 @@ bool Insert(SqList &L, int i,ElemType e){
 //    }
     // 令j = L的长度 当j大于等于 i 时 j减1
     // i是位序
+    //   j相当于相对指针  每处理完一个指针之后就向前走
     for (int j = L.length;j >= i;j--) {
         // L[J] 相当于新开拓的空间
         L.data[j] = L.data[j-1];
@@ -67,16 +68,56 @@ void InitList(SqList &L){
     L.length = 0;
     L.MaxSize = initsize;
 }
+
+bool deleteList(SqList &L,int i){
+    if(i < 1 || i > L.length + 1){
+        return false;
+    }
+
+//    for (int j = i; j < L.length-1 ; ++j) {
+//        L.data[j] = L.data[j+1];
+//    }
+//  当位序位于最后一位时直接跳过循环进行长度-1操作
+// 但是内存空间实际上并没有完成删除
+
+    for (int k = i; k < L.length; ++k) {
+        L.data[k-1] = L.data[k];
+    }
+    L.length --;
+
+
+}
+int LocateElem(SqList &L, ElemType e){
+    for (int i = 0; i < L.length ; ++i) {
+        if (L.data[i] == e) {
+            return i + 1;
+        }
+    }
+    return 0;
+
+
+
+}
 int main() {
+    // 随机数种子
+    srand((unsigned)time(NULL));
+
+    //定义数据结构SqList 将其名义为L
     SqList L;
+    //初始化数据结构L
     InitList(L);
+
     for (int i=1; i<=5; i++) {
         L.data [i-1] = i;
         L.length++;
     }
+
     displaySqList(L);
-    Insert(L,1,10);
+    Insert(L,5,10);
     displaySqList(L);
+    deleteList(L,6);
+    displaySqList(L);
+
 //    //声明指针变量后 应用箭头去访问
 ////    pl->data;
 //    printf("#x\n",L.data);
